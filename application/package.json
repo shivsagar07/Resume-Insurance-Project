@@ -1,0 +1,9 @@
+{
+  "name": "health-insurance-app",
+  "version": "1.0.0",
+  "description": "Health Insurance Backend Application",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
