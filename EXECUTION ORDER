@@ -1,0 +1,8 @@
+1. Create GitHub repo
+2. Copy & paste all files
+3. Push to GitHub
+4. Create S3 bucket for backend
+5. Setup Jenkins
+6. Add DockerHub credentials
+7. Run Jenkins pipeline
+8. Access app via EC2 Public IP
