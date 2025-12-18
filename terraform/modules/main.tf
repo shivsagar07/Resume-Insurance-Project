@@ -3,6 +3,11 @@ module "cloudwatch" {
   asg_name = module.ec2.asg_name
   email    = "YOUR_EMAIL@gmail.com"
 }
+module "lambda" {
+  source = "./modules/lambda"
+}
+
+
 #YOU MUST CHANGE
 
 #Replace email with your real email
