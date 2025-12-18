@@ -7,5 +7,5 @@ output "public_subnets" {
 }
 
 output "private_subnets" {
-  value = [aws_subnet.public.id]
+  value = [aws_subnet.private.id]
 }
