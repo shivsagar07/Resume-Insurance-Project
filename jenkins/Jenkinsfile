@@ -1,3 +1,7 @@
+#YOUR_DOCKERHUB_USERNAME
+
+#YOUR_GITHUB_USERNAME
+
 pipeline {
     agent any
 
