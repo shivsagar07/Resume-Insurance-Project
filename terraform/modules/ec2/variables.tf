@@ -1,3 +1,4 @@
-output "public_ip" {
-  value = aws_instance.app.public_ip
-}
+variable "instance_type" {}
+variable "security_group" {}
+variable "private_subnets" {}
+variable "target_group_arn" {}
