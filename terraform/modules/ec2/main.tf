@@ -1,14 +1,15 @@
 #ami → latest Amazon Linux AMI for your region
 
-resource "aws_instance" "app" {
-  ami                    = "ami-0f5ee92e2d63afc18"
-  instance_type           = var.instance_type
-  subnet_id               = var.subnet_id
-  vpc_security_group_ids  = [var.security_group]
+module "alb" {
+  source          = "./modules/alb"
+  vpc_id          = module.vpc.vpc_id
+  public_subnets  = module.vpc.public_subnets
+}
 
-  user_data = file("${path.module}/user_data.sh")
-
-  tags = {
-    Name = "Health-Insurance-App"
-  }
+module "ec2" {
+  source            = "./modules/ec2"
+  instance_type     = var.instance_type
+  security_group    = module.security.sg_id
+  private_subnets   = module.vpc.private_subnets
+  target_group_arn = module.alb.target_group_arn
 }
